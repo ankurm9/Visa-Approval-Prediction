@@ -3,45 +3,36 @@
 This project aims to predict the approval of US visa applications using machine learning and deploy the model using MLOps practices. The MLOps pipeline ensures seamless development, deployment, and monitoring of the machine learning model, ensuring continuous integration and delivery (CI/CD) for robust and scalable production-ready models.
 
 ## Table of Contents
+
 - Project Overview
-- Features
+- Workflow
 - Technologies Used
 - Data
-- Modeling
-- MLOps Workflow
 - Installation
 - Usage
 - Results
-- Contributing
 - License
 
 ## Project Overview
+
 Visa approval is a critical process that involves several factors. This project applies machine learning models to predict the approval of US visa applications based on applicant information. Using MLOps, we automate model training, deployment, monitoring, and retraining to streamline and enhance the prediction process.
 
-## The project workflow includes:
+## Workflow:
 
-- Data ingestion and preprocessing.
-- Feature selection and engineering.
-- Model training and evaluation.
-- Model deployment using CI/CD pipelines.
-- Monitoring model performance in production.
-- Automated retraining based on feedback and data drift.
-- Features
-- Automated data ingestion and preprocessing pipeline.
-- Continuous integration with automated model testing and validation.
-- Containerized model deployment using Docker.
-- Real-time monitoring of model performance (accuracy, drift, etc.).
-- Automated retraining when performance drops below a threshold.
-- Version control for datasets and models.
-- Technologies Used
-- Machine Learning: scikit-learn, XGBoost
-- MLOps: MLflow, DVC, Docker, Kubernetes
-- Deployment: Flask, FastAPI, AWS EC2/S3, or Google Cloud
-- CI/CD: GitHub Actions, Jenkins, or CircleCI
-- Monitoring: Prometheus, Grafana, or Seldon Core
-- Version Control: Git, DVC (Data Version Control)
-- Containerization: Docker
-- Orchestration: Kubernetes
+1. constants
+2. entity
+3. components
+4. pipeline
+5. Main file
+
+## Technologies Used:
+
+- Anaconda: https://www.anaconda.com/
+- Vs code: https://code.visualstudio.com/download
+- Git: https://git-scm.com/
+- Flowchart: https://whimsical.com/
+- MLOPs Tool: https://www.evidentlyai.com/
+- MongoDB: https://account.mongodb.com/account/login
 
 ## Data
 Download the dataset from [here](https://www.kaggle.com/datasets/moro23/easyvisa-dataset).
@@ -94,19 +85,19 @@ The data contains the different attributes of the employee and the employer. The
 
 4. Set up DVC for data versioning:
 
-dvc init
-dvc remote add -d myremote <remote-url>
-dvc pull
+    dvc init
+    dvc remote add -d myremote <remote-url>
+    dvc pull
 
 5. Set up MLflow for experiment tracking:
 
-mlflow ui
+    mlflow ui
 
 6. Start the local Flask or FastAPI server for deployment:
 
-python app.py
+    python app.py
 
-#### Usage
+## Usage
 1. To train the model:
 
     ```bash
