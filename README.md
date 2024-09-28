@@ -53,7 +53,7 @@ The data contains the different attributes of the employee and the employer. The
 - <span style="color:blue">case_status:</span> Flag indicating if the Visa was certified or denied
 
 ## Modeling
-
+<span style="color:red">case_id:</span> 
 
 ## Evaluation Metrics:
 
