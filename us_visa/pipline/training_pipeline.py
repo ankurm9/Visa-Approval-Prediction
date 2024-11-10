@@ -4,7 +4,7 @@ from us_visa.logger import logging
 from us_visa.components.data_ingestion import DataIngestion
 from us_visa.components.data_validation import DataValidation
 from us_visa.components.data_transformation import DataTransformation
-# from us_visa.components.model_trainer import ModelTrainer
+from us_visa.components.model_trainer import ModelTrainer
 # from us_visa.components.model_evaluation import ModelEvaluation
 # from us_visa.components.model_pusher import ModelPusher
 
@@ -149,7 +149,7 @@ class TrainPipeline:
             data_validation_artifact = self.start_data_validation(data_ingestion_artifact=data_ingestion_artifact)
             data_transformation_artifact = self.start_data_transformation(
                 data_ingestion_artifact=data_ingestion_artifact, data_validation_artifact=data_validation_artifact)
-            # model_trainer_artifact = self.start_model_trainer(data_transformation_artifact=data_transformation_artifact)
+            model_trainer_artifact = self.start_model_trainer(data_transformation_artifact=data_transformation_artifact)
             # model_evaluation_artifact = self.start_model_evaluation(data_ingestion_artifact=data_ingestion_artifact,
             #                                                         model_trainer_artifact=model_trainer_artifact)
             
