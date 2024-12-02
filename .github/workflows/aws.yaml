@@ -24,7 +24,6 @@ jobs:
         id: login-ecr
         uses: aws-actions/amazon-ecr-login@v1
         with:
-          registry-type: public
           mask-password: true
 
       - name: Build, tag, and push image to Amazon ECR
@@ -34,9 +33,10 @@ jobs:
           ECR_REPOSITORY: ${{ secrets.ECR_REPO }}
           IMAGE_TAG: latest
         run: |
-          docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .  
-          docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
-          echo "::set-output name=image::$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG"
+          set -e
+          docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG . || exit 1
+          docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG || exit 1
+          echo "image=$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG" >> "$GITHUB_OUTPUT"
 
   Continuous-Deployment:
     needs: Continuous-Integration
@@ -54,10 +54,7 @@ jobs:
 
       - name: Login to Amazon ECR
         id: login-ecr
-        uses: aws-actions/amazon-ecr-login@v2
-        with:
-          registry-type: public
-          mask-password: true
+        uses: aws-actions/amazon-ecr-login@v1
 
       - name: Run Docker Image to serve users
         run: |
