@@ -85,9 +85,6 @@ The data contains the different attributes of the employee and the employer. The
     ```
 
 # AWS CI/CD Deployment with GitHub Actions
-1. Login to Console
-2. Create IAM user for deployment
-
 
 
 ## License
