@@ -15,7 +15,7 @@ This project aims to predict the approval of US visa applications using machine 
 
 ## Project Overview
 
-Visa approval is a critical process that involves several factors. This project applies machine learning models to predict the approval of US visa applications based on applicant information. Using MLOps, we automate model training, deployment, monitoring, and retraining to streamline and enhance the prediction process.
+This project applies machine learning models to predict the approval of US visa applications based on applicant information. Using MLOps, we automate model training, deployment, monitoring, and retraining to streamline and enhance the prediction process.
 
 ## Workflow:
 
@@ -51,11 +51,6 @@ The data contains the different attributes of the employee and the employer. The
 - unit_of_wage: Unit of prevailing wage. Values include Hourly, Weekly, Monthly, and Yearly.
 - full_time_position: Is the position of work full-time? Y = Full Time Position; N = Part Time Position
 - case_status: Flag indicating if the Visa was certified or denied
-
-## Modeling
-
-
-## Evaluation Metrics:
 
 
 
