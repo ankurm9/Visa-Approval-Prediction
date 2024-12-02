@@ -84,45 +84,9 @@ The data contains the different attributes of the employee and the employer. The
     pip install -r requirements.txt
     ```
 
-4. Set up DVC for data versioning:
-
-    dvc init
-    dvc remote add -d myremote <remote-url>
-    dvc pull
-
-5. Set up MLflow for experiment tracking:
-
-    mlflow ui
-
-6. Start the local Flask or FastAPI server for deployment:
-
-    python app.py
-
-## Usage
-1. To train the model:
-
-    ```bash
-    python train.py
-    ```
-
-2. To test the model locally:
-
-    ```bash
-    python test.py
-    ```
-
-3. To deploy the model (Docker):
-
-    ```bash
-    docker build -t visa-approval-app .
-    ```
-    ```bash
-    docker run -p 5000:5000 visa-approval-app
-    ```
-
-4. To monitor the model in production, visit the Prometheus or Grafana dashboards set up in your cloud infrastructure.
-
-## Results
+# AWS CI/CD Deployment with GitHub Actions
+1. Login to Console
+2. Create IAM user for deployment
 
 
 
