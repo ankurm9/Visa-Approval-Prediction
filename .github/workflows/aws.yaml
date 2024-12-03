@@ -41,20 +41,18 @@ jobs:
           ECR_REPOSITORY: ${{ secrets.ECR_REPO }}
           IMAGE_TAG: latest
         run: |
-          # Print more debug info
-          echo "Current directory contents:"
-          ls -la
+          set -e
+          # Print registry info for debugging
+          echo "Registry: $ECR_REGISTRY"
+          echo "Repository: $ECR_REPOSITORY"
           
-          # Build with more verbose output
-          docker build --progress=plain -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
+          # Build and tag the image
+          docker build -t $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG .
           
-          # Check docker images
-          docker images
+          # Push the image
+          docker push $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
           
-          # Push with more verbose output
-          docker push -v $ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG
-          
-          # Use the new way to set output
+          # Use environment file for outputs
           echo "image=$ECR_REGISTRY/$ECR_REPOSITORY:$IMAGE_TAG" >> $GITHUB_ENV
 
 
